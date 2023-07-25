@@ -18,6 +18,7 @@ local socket = require('socket')
 local launcherConnected = false
 local isConnecting = false
 local launcherVersion = "" -- used only for the server list
+local modVersion = "4.8.1" -- the mod version
 -- server
 local serverList -- server list JSON
 local currentServer = nil -- Table containing the current server IP, port and name
@@ -158,7 +159,7 @@ local function logout()
 	loggedIn = false
 end
 
---- Send the server list and network stats such as player and server count to the game's CEF UI
+--- Send the server list and network stats such as player and server count plus mod and launcher versions to the game's CEF UI
 -- @usage MPCoreNetwork.sendBeamMPInfo()
 local function sendBeamMPInfo()
 	local servers = jsonDecode(serverList)
@@ -172,7 +173,9 @@ local function sendBeamMPInfo()
 	-- send player and server values to front end.
 	guihooks.trigger('BeamMPInfo', { -- <players> count on the bottom of the screen
 		players = ''..p,
-		servers = ''..s
+		servers = ''..s,
+		beammpGameVer = ''..modVersion,
+		beammpLauncherVer = ''..launcherVersion
 	})
 end
 

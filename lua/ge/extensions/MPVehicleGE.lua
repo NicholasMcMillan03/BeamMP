@@ -38,18 +38,19 @@ local original_spawnDefault
 -- @tfield roleToInfo_subtable RoleName_N ..
 -- @usage local roleInfo = roleToInfo["USER"]
 local roleToInfo = {
-	['USER']	= { backcolor = ColorI(000, 000, 000, 127), tag = "", shorttag = "" },
-	['EA']		= { backcolor = ColorI(069, 000, 150, 127), tag = " [Early Access]", shorttag = " [EA]" },
-	['YT']		= { backcolor = ColorI(200, 000, 000, 127), tag = " [YouTuber]", shorttag = " [YT]" },
-	['ET']		= { backcolor = ColorI(210, 214, 109, 127), tag = " [Events Team]", shorttag = " [Events]" },
-	['SUPPORT']	= { backcolor = ColorI(068, 109, 184, 127), tag = " [Support]", shorttag = " [Staff]" },
-	['STAFF']	= { backcolor = ColorI(068, 109, 184, 127), tag = " [BeamMP Staff]", shorttag = " [Staff]" },
-	['MOD']		= { backcolor = ColorI(068, 109, 184, 127), tag = " [Moderator]", shorttag = " [Mod]" },
-	['ADM']		= { backcolor = ColorI(218, 000, 078, 127), tag = " [Admin]", shorttag = " [Adm]" },
-	['MDEV']	= { backcolor = ColorI(194, 055, 055, 127), tag = " [BeamMP Dev]", shorttag = " [Dev]" },
-	['NGDEV']	= { backcolor = ColorI(252, 107, 003, 127), tag = " [BeamNG Developer]", shorttag = " [BNG]" },
-	['NGSTAFF']	= { backcolor = ColorI(252, 107, 003, 127), tag = " [BeamNG Staff]", shorttag = " [BNG]" },
-	['NGAFFIL']	= { backcolor = ColorI(252, 107, 003, 127), tag = " [BeamNG Affiliate]", shorttag = " [BNG]" }
+	['USER']	= { backcolor = ColorI(000, 000, 000, 127), forecolor = ColorI(255, 255, 255, 127), tag = "", shorttag = "" },
+	['EA']		= { backcolor = ColorI(069, 000, 150, 127), forecolor = ColorI(193, 139, 255, 255), tag = " [Early Access]", shorttag = " [EA]" },
+	['CONT']	= { backcolor = ColorI(069, 000, 150, 127), forecolor = ColorI(193, 139, 255, 255), tag = " [Contributor]", shorttag = " [CO]" },
+	['YT']		= { backcolor = ColorI(200, 000, 000, 127), forecolor = ColorI(255, 000, 000, 127), tag = " [Content Creator]", shorttag = " [CC]" },
+	['ET']		= { backcolor = ColorI(210, 214, 109, 127), forecolor = ColorI(210, 214, 109, 127), tag = " [Events Team]", shorttag = " [Events]" },
+	['SUPPORT']	= { backcolor = ColorI(068, 109, 184, 127), forecolor = ColorI(99, 154, 255, 127), tag = " [Support]", shorttag = " [Staff]" },
+	['STAFF']	= { backcolor = ColorI(068, 109, 184, 127), forecolor = ColorI(99, 154, 255, 127), tag = " [BeamMP Staff]", shorttag = " [Staff]" },
+	['MOD']		= { backcolor = ColorI(068, 109, 184, 127), forecolor = ColorI(99, 154, 255, 127), tag = " [Moderator]", shorttag = " [Mod]" },
+	['ADM']		= { backcolor = ColorI(218, 000, 078, 127), forecolor = ColorI(255, 000, 089, 127), tag = " [Admin]", shorttag = " [Adm]" },
+	['MDEV']	= { backcolor = ColorI(194, 055, 055, 127), forecolor = ColorI(255, 070, 101, 127), tag = " [BeamMP Dev]", shorttag = " [Dev]" },
+	['NGDEV']	= { backcolor = ColorI(252, 107, 003, 127), forecolor = ColorI(252, 107, 003, 127), tag = " [BeamNG Developer]", shorttag = " [BNG]" },
+	['NGSTAFF']	= { backcolor = ColorI(252, 107, 003, 127), forecolor = ColorI(252, 107, 003, 127), tag = " [BeamNG Staff]", shorttag = " [BNG]" },
+	['NGAFFIL']	= { backcolor = ColorI(252, 107, 003, 127), forecolor = ColorI(252, 107, 003, 127), tag = " [BeamNG Affiliate]", shorttag = " [BNG]" }
 }
 
 --- (in table) Specifies the table in roleToInfo
@@ -67,16 +68,41 @@ local roleToInfo = {
 -- @tfield string JBeamName_N
 -- @usage local simplified = simplified_vehicles["coupe"]
 local simplified_vehicles = {
+	atv = "simple_traffic_atv",
+	autobello = "simple_traffic_autobello",
+	barstow = "simple_traffic_barstow",
+	bastion = "simple_traffic_bastion",
+	bluebuck = "simple_traffic_bluebuck",
+	bolide = "simple_traffic_bolide",
+	burnside = "simple_traffic_burnside",
+	citybus = "simple_traffic_citybus",
 	coupe = "simple_traffic_coupe",
 	covet = "simple_covet",
 	etk800 = "simple_traffic_etk800",
 	etkc = "simple_traffic_etkc",
 	etki = "simple_traffic_etki",
+	fullsize = "simple_traffic_fullsize",
+	hopper = "simple_traffic_hopper",
+	lansdale = "simple_traffic_lansdale",
 	legran = "simple_traffic_legran",
 	midsize = "simple_traffic_midsize",
+	midtruck = "simple_traffic_midtruck",
+	miramar = "simple_traffic_miramar",
+	moonhawk = "simple_traffic_moonhawk",
 	pessima = "simple_traffic_pessima",
+	pickup = "simple_traffic_pickup",
+	pigeon = "simple_traffic_pigeon",
+	racetruck = "simple_traffic_racetruck",
+	roamer = "simple_traffic_roamer",
+	rockbouncer = "simple_traffic_rockbouncer",
+	sbr = "simple_traffic_sbr",
+	scintilla = "simple_traffic_scintilla",
+	semi = "simple_traffic_semi",
 	sunburst = "simple_traffic_sunburst",
-	vivace = "simple_vivace_slothub"
+	van = "simple_traffic_van",
+	vivace = "simple_vivace_slothub",
+	wendover = "simple_traffic_wendover",
+	wigeon = "simple_traffic_wigeon"
 }
 
 local settingsCache = {
@@ -1648,6 +1674,30 @@ local function onPreRender(dt)
 			if not v.position then goto skip_vehicle end -- return if no position has been received yet
 			local pos = Point3F(v.position.x, v.position.y, v.position.z)
 
+			if settings.getValue("enableBlobs") and not v.isSpawned then
+					local colors = nil
+
+					if v.spawnQueue then -- in queue
+						if settingsCache.showBlobQueued then
+							colors = MPHelpers.hex2rgb(settings.getValue("blobColorQueued"))
+						end
+					elseif v.isIllegal then -- illegal (modded)
+						if settingsCache.showBlobIllegal then
+							colors = MPHelpers.hex2rgb(settings.getValue("blobColorIllegal"))
+						end
+					elseif v.isDeleted then
+						if settingsCache.showBlobDeleted then
+							colors = MPHelpers.hex2rgb(settings.getValue("blobColorDeleted"))
+						end
+					else
+						colors = { 1, 0, 1 }
+					end
+
+					if colors then
+						debugDrawer:drawSphere(pos, 1, ColorF(colors[1], colors[2], colors[3], 0.5))
+					end
+			end
+
 			local nametagAlpha = 1
 			local nametagFadeoutDistance = settings.getValue("nameTagFadeDistance", 40)
 
@@ -1695,29 +1745,7 @@ local function onPreRender(dt)
 				end
 
 				if not settings.getValue("nameTagFadeEnabled") then nametagAlpha = 1 end
-				if settings.getValue("dontFullyHide") then nametagAlpha = math.max(0.3, nametagAlpha) end
-
-				if settings.getValue("enableBlobs") and not v.isSpawned then
-					local colors = nil
-
-					if v.spawnQueue then -- in queue
-						if settingsCache.showBlobQueued then
-							colors = MPHelpers.hex2rgb(settings.getValue("blobColorQueued"))
-						end
-					elseif v.isIllegal then -- illegal (modded)
-						if settingsCache.showBlobIllegal then
-							colors = MPHelpers.hex2rgb(settings.getValue("blobColorIllegal"))
-						end
-					elseif v.isDeleted then
-						if settingsCache.showBlobDeleted then
-							colors = MPHelpers.hex2rgb(settings.getValue("blobColorDeleted"))
-						end
-					else
-						colors = { 1, 0, 1 }
-					end
-
-					if colors then debugDrawer:drawSphere(pos, 1, ColorF(colors[1], colors[2], colors[3], 0.5)) end
-				end
+				if settings.getValue("nameTagDontFullyHide") then nametagAlpha = math.max(0.3, nametagAlpha) end
 				
 				local name = ""
 				local tag = ""

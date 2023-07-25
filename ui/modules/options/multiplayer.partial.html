@@ -36,6 +36,14 @@
   <md-checkbox ng-model="options.data.values.simplifyRemoteVehicles" ng-change="options.applyState()"></md-checkbox>
 </md-list-item>
 
+<md-list-item md-no-ink ng-show="options.data.values.showAdvancedMPOptions">
+  <p><span class="mp-setting-highlight">EXPERIMENTAL</span> {{:: 'ui.options.multiplayer.enableNewChatMenu' |
+    translate }}</p>
+  <md-tooltip md-direction="right">{{:: 'ui.options.multiplayer.enableNewChatMenu.tooltip' | translate }}
+  </md-tooltip>
+  <md-checkbox ng-model="options.data.values.enableNewChatMenu" ng-change="options.applyState()"></md-checkbox>
+</md-list-item>
+
 <md-list-item md-no-ink>
   <p>{{:: 'ui.options.multiplayer.queueSpawnEdit' | translate }}</p>
   <md-tooltip md-direction="right">{{:: 'ui.options.multiplayer.queueSpawnEdit.tooltip' | translate }}</md-tooltip>
@@ -114,7 +122,6 @@
   <md-checkbox ng-model="options.data.values.enableBlobs" ng-change="options.applyState()"></md-checkbox>
 </md-list-item>
 
-
 <div class="mp-setting-border" ng-show="options.data.values.enableBlobs">
   <bng-accordion flex class="vAccordion--default" multiple>
     <bng-accordion-pane is-open="false" style="padding-right: 10px; padding-left: 10px" class="md-list-item">
@@ -131,7 +138,7 @@
                 <label>{{:: 'ui.options.multiplayer.tuneBlobColorsHelp' | translate }}</label>
                 <input id="queuedColor" flex type="text" ng-model="options.data.values.blobColorQueued"
                   ng-change="options.applyState()" oninput="updateSettingsColorPreview(this)" pattern="#[0-9a-fA-F]{6}">
-                <div id="queuedColorPreview" style="opacity:0;">&nbsp;&nbsp;</div>
+                <div id="queuedColorPreview" style="background-color: {{options.data.values.blobColorQueued}}">&nbsp;&nbsp;</div>
               </md-input-container>
             </div>
           </div>
@@ -146,7 +153,7 @@
                 <input id="illegalColor" flex type="text" ng-model="options.data.values.blobColorIllegal"
                   ng-change="options.applyState()" oninput="updateSettingsColorPreview(this)" pattern="#[0-9a-fA-F]{6}"
                   spellcheck="false" maxlength="7">
-                <div id="illegalColorPreview" style="opacity:0;">&nbsp;&nbsp;</div>
+                <div id="illegalColorPreview" style="background-color: {{options.data.values.blobColorIllegal}}">&nbsp;&nbsp;</div>
               </md-input-container>
             </div>
           </div>
@@ -161,7 +168,7 @@
                 <input id="deletedColor" flex type="text" ng-model="options.data.values.blobColorDeleted"
                   ng-change="options.applyState()" oninput="updateSettingsColorPreview(this)" pattern="#[0-9a-fA-F]{6}"
                   spellcheck="false" maxlength="7">
-                <div id="deletedColorPreview" style="opacity:0;">&nbsp;&nbsp;</div>
+                <div id="deletedColorPreview" style="background-color: {{options.data.values.blobColorDeleted}}">&nbsp;&nbsp;</div>
               </md-input-container>
             </div>
           </div>
